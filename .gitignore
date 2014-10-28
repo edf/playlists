@@ -1,0 +1,7 @@
+# ignore the following:
+/bin
+/db
+/Gemfile.lock
+/lib
+README.rdoc
+/tmp

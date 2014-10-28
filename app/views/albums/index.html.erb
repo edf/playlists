@@ -1,0 +1,39 @@
+<h1>Listing albums</h1>
+
+<%= form_tag(search_albums_url, method: "get") do %> 
+   <%= label_tag(:q, "Search for:") %>
+   <%= text_field_tag(:q) %>
+   <%= submit_tag("Search", :name => nil) %>
+<% end %>
+
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Album Name</th>
+      <th>Artist</th>
+      <th>Year</th>
+      <th>Number of times played</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.name %></td>
+        <td><%= Artist.find(album.artist_id).name %></td>
+        <td><%= album.year %></td>
+        <td><%= album.play %></td>
+        <td><%= link_to 'Show', album %></td>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album', new_album_path %>
+<%= link_to 'New Artist', new_artist_path %>
