@@ -1,5 +1,4 @@
 playlists
 =========
 
-
-N.B.  search is broken, line 73 of app/controllers/albums_controller.rb
+N.B.  view is broken, app/views/albums/index.html.erb line #22
