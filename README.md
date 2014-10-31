@@ -1,4 +1,4 @@
 playlists
 =========
 
-N.B.  view is broken, app/views/albums/index.html.erb line #22
+a test project using Ruby on Rails
