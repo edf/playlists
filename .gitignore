@@ -1,7 +1,7 @@
 # ignore the following:
-/bin
-/db
+/bin/*
+/db/*
 /Gemfile.lock
-/lib
+/lib/*
 README.rdoc
-/tmp
+/tmp/*

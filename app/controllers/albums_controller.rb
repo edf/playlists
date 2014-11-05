@@ -10,6 +10,11 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+      respond_to do |format|
+         format.html # index.html.erb
+         format.xml  { render xml: @album}
+         format.json { render json: @album}
+      end
   end
 
   # GET /albums/new
@@ -62,7 +67,7 @@ class AlbumsController < ApplicationController
   end
 
 def search
-   @album = Album.where("name like ?", "%#{params[:q]}%")
+   @albums = Album.where("name like ?", "%#{params[:q]}%")
    render :index
 end
 

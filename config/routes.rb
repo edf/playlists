@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :artists
 
-  resources :albums
-
   resources :albums do 
        collection do
          get 'search' 
